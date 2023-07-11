@@ -81,7 +81,7 @@ int main(){
 		cout<<"Enter your option:\t";
 		cin>>choice;
 		
-		int computer = rand() % 4 + 1;
+		int computer = rand() % 4 + 1; // generate random move by computer between 1 and 4
 		switch(computer){
 			case 1:
 				rock(choice);
