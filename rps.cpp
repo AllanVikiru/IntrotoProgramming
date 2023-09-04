@@ -20,6 +20,8 @@ int rock(int choice){
 			cout<<"I played rock. Too bad, you lost :("<<endl;
 			points = points - 2;
 			break;
+		case 9: 
+			break;
 		default:
 			cout<<"Your input was invalid. Try again."<<endl;
 			break;
@@ -41,6 +43,8 @@ int paper(int choice){
 		case 3:
 			cout<<"I played paper. Congratulations, you won! :D"<<endl;
 			points = points + 3;
+			break;
+		case 9: 
 			break;
 		default:
 			cout<<"Your input was invalid. Try again."<<endl;
@@ -64,6 +68,8 @@ int scissors(int choice){
 			cout<<"I played scissors. It's a tie!"<<endl;
 			points = points + 1;
 			break;
+		case 9: 
+			break;
 		default:
 			cout<<"Your input was invalid. Try again."<<endl;
 			break;
@@ -73,29 +79,31 @@ int scissors(int choice){
 
 int main(){
 	int choice;
-	for(int turns=0; turns <=4; turns ++){
+	
+	for(int turns=0; turns <=4; turns ++){ // counter-controlled loop
+		while (choice != 9){ // sentinel-controlled loop
 		cout<<"Rock Paper Scissors!"<<endl;
 		cout<<"1. Rock"<<endl;
 		cout<<"2. Paper"<<endl;	
 		cout<<"3. Scissors"<<endl;
-		cout<<"Enter your option:\t";
+		cout<<"Enter your option (or enter 9 to quit):\t";
 		cin>>choice;
-		
-		int computer = rand() % 4 + 1; // generate random move by computer between 1 and 4
-		switch(computer){
-			case 1:
-				rock(choice);
-				break;
-			case 2:
-				paper(choice);
-				break;
-			case 3:
-				scissors(choice);
-				break;	
-			default:
-				cout<<"I made a bad move, you\'ll get another turn"<<endl;
-				turns --;
-				break;
+			int computer = rand() % 4 + 1;
+			switch(computer){
+				case 1:
+					rock(choice);
+					break;
+				case 2:
+					paper(choice);
+					break;
+				case 3:
+					scissors(choice);
+					break;	
+				default:
+					cout<<"I made a bad move, you\'ll get another turn"<<endl;
+					turns --;
+					break;
+			}
 		}
 	}		
 	cout<<"Game Over! You have "<<points<<" points";
