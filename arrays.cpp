@@ -4,7 +4,7 @@
 using namespace std;
 
 int main(){
-	int myArray[5];
+	int myArray[5]; // initialise an array of type int with 5 values
 	
 	for (int i; i<6; i++){
 		cout<<"Enter a value to populate the array: ";
