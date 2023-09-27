@@ -82,13 +82,13 @@ int main(){
 	
 	for(int turns=0; turns <=4; turns ++){ // counter-controlled loop
 		while (choice != 9){ // sentinel-controlled loop
-		cout<<"Rock Paper Scissors!"<<endl;
-		cout<<"1. Rock"<<endl;
-		cout<<"2. Paper"<<endl;	
-		cout<<"3. Scissors"<<endl;
-		cout<<"Enter your option (or enter 9 to quit):\t";
-		cin>>choice;
-			int computer = rand() % 4 + 1;
+			cout<<"Rock Paper Scissors!"<<endl;
+			cout<<"1. Rock"<<endl;
+			cout<<"2. Paper"<<endl;	
+			cout<<"3. Scissors"<<endl;
+			cout<<"Enter your option (or enter 9 to quit):\t";
+			cin>>choice;
+			int computer = 1 + rand() % 4; // generate random number between 1 and 4
 			switch(computer){
 				case 1:
 					rock(choice);
